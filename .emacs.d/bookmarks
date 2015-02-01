@@ -2,14 +2,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("2015-01-24-wechall.md"
+((".emacs"
+ (filename . "~/winkar_emacs/.emacs")
+ (front-context-string . "(require 'packag")
+ (rear-context-string)
+ (position . 1))
+("2015-01-24-wechall.md"
  (filename . "~/Documents/winkar.github.io/_posts/2015-01-24-wechall.md")
  (front-context-string)
  (rear-context-string . "用post查看该界面，就能通过了")
  (position . 5065))
-("config"
- (filename . "~/.emacs")
- (front-context-string . "(require 'packag")
- (rear-context-string)
- (position . 1))
 )
