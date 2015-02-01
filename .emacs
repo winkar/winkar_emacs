@@ -61,7 +61,9 @@
 (color-theme-initialize)  
 ;; (color-theme-solarized)  
 ;; (color-theme-monokai)
-(load-theme 'monokai t)
+(load-theme 'molokai t)
+(setq molokai-theme-kit t)
+
 
 
 
@@ -103,10 +105,13 @@
 (popwin-mode 1)
 
 (require 'direx)
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+      popwin:special-display-config)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
 
 ;; (require 'chinese-fonts-setup)
 
-
+(global-linum-mode t)
 (tool-bar-mode 0)  
 (menu-bar-mode 0)  
 (scroll-bar-mode 0)  
