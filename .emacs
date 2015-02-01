@@ -79,6 +79,7 @@
 (yas-global-mode 1)
 
 
+
 ; magit
 (require 'magit)
 
@@ -97,6 +98,11 @@
 (emms-standard)
 (emms-default-players)
 
+
+(require 'popwin)
+(popwin-mode 1)
+
+(require 'direx)
 
 ;; (require 'chinese-fonts-setup)
 

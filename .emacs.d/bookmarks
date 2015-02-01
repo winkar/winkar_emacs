@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-((".emacs"
+(("test.py"
+ (filename . "~/workspace/test/test.py")
+ (front-context-string . "r = \"00000000011")
+ (rear-context-string)
+ (position . 1))
+(".emacs"
  (filename . "~/winkar_emacs/.emacs")
  (front-context-string . "(require 'packag")
  (rear-context-string)
