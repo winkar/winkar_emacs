@@ -1,0 +1,22 @@
+
+;; ----- smex-history -----
+(
+ load-file
+ projectile-ag
+ helm-projectile
+ list-packages
+ package-install
+ helm-M-x
+ gdb
+)
+
+;; ----- smex-data -----
+(
+ (gdb . 1)
+ (helm-M-x . 2)
+ (package-install . 1)
+ (list-packages . 3)
+ (helm-projectile . 2)
+ (projectile-ag . 1)
+ (load-file . 2)
+)
