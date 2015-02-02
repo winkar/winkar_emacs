@@ -20,7 +20,7 @@ fuzzyfinder for buffers, files, imenu etc.
 project manager
 
 # monokai colortheme
-or you can choose solarized
+or you can choose solarized , or anyother u like
 
 # smartparens
 
@@ -36,3 +36,8 @@ snippet
 # Emms
 mutimedia if you want
 
+# Elpy
+I have changed my mind from ac-anaconda-mode turn to elpy, for the latter is much easier
+
+# NeoTree
+i've tried direx, neotree is more convinient

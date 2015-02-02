@@ -7,12 +7,6 @@
 (package-initialize) ;; You might already have this line
 
 
-;;neotree
-(require 'neotree)
-(global-set-key (kbd "<f4>") 'neotree-projectile-action)
-
-
-
 ; helm
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -40,6 +34,7 @@
 (evil-leader/set-key "TAB" 'other-window)
 (evil-leader/set-key "w" 'delete-window)
 (evil-leader/set-key "n" 'evil-window-vnew)
+(evil-leader/set-key-for-mode 'python-mode "g" 'anaconda-mode-goto)
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
@@ -51,23 +46,19 @@
 
 ; auto-complete
 ;; dirty fix for having AC everywhere
-;; (define-globalized-minor-mode real-global-auto-complete-mode
-;;   auto-complete-mode (lambda ()
-;;                        (if (not (minibufferp (current-buffer)))
-;;                          (auto-complete-mode 1))
-;;                        ))
-;; (real-global-auto-complete-mode t)
-;; (add-hook 'python-mode-hook 'ac-anaconda-setup)
-(require 'elpy)
-(elpy-enable)
-(evil-leader/set-key-for-mode 'python-mode "g" 'elpy-goto-definition)
-(evil-leader/set-key-for-mode 'python-mode "e" 'elpy-multiedit)
-
+(define-globalized-minor-mode real-global-auto-complete-mode
+  auto-complete-mode (lambda ()
+                       (if (not (minibufferp (current-buffer)))
+                         (auto-complete-mode 1))
+                       ))
+(real-global-auto-complete-mode t)
+(add-hook 'python-mode-hook 'ac-anaconda-setup)
+;; (global-set-key (kbd "TAB") 'auto-complete)
 
 
 ; color-theme
-;; (require 'color-theme)  
-;; (color-theme-initialize)  
+(require 'color-theme)  
+(color-theme-initialize)  
 ;; (color-theme-solarized)  
 
 
@@ -99,29 +90,23 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-
-;; guide-key
 (require 'guide-key)
 (setq guide-key/guide-key-sequence t)
 (guide-key-mode 1)  ; Enable guide-key-mode
 
 
-;; emms
 (require 'emms-setup)
 (emms-standard)
 (emms-default-players)
 
 
-;; ;; popwin
-;; (require 'popwin)
-;; (popwin-mode 1)
+(require 'popwin)
+(popwin-mode 1)
 
-
-;; ;; direx
-;; (require 'direx)
-;; (push '(direx:direx-mode :position left :width 25 :dedicated t)
-;;       popwin:special-display-config)
-;; (evil-leader/set-key "t" 'direx:jump-to-directory-other-window)
+(require 'direx)
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+      popwin:special-display-config)
+(evil-leader/set-key "t" 'direx:jump-to-directory-other-window)
 
 
 ;; (require 'powerline-evil)
@@ -154,8 +139,7 @@
 
 ;; (require 'chinese-fonts-setup)
 
-;; (global-linum-mode t)
-(linum-mode)
+(global-linum-mode t)
 (tool-bar-mode 0)  
 (menu-bar-mode 0)  
 (scroll-bar-mode 0)  
@@ -175,8 +159,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" "7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" default)))
- '(session-use-package t nil (session)))
+    ("7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

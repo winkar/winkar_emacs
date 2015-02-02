@@ -1,1 +1,1 @@
-("~/winkar_emacs/" "~/Documents/winkar.github.io/")
+("~/winkar_emacs/" "~/Documents/winkar.github.io/" "~/workspace/")
